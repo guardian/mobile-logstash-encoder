@@ -20,7 +20,7 @@ final class MobileLogstashEncoder extends LogstashEncoder {
       """.stripMargin))
     JsObject((AppIdentity.whoAmI(defaultAppName = defaultAppName) match {
       case awsIdentity: AwsIdentity => Map(
-        "app" -> defaultAppName,
+        "app" -> awsIdentity.app,
         "stack" -> awsIdentity.stack,
         "stage" -> awsIdentity.stage
       )
