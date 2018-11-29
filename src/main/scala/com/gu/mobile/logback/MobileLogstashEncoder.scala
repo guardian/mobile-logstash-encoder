@@ -19,15 +19,14 @@ final class MobileLogstashEncoder extends LogstashEncoder {
          |  <defaultAppName>APP_NAME_HERE</defaultAppName>
          |</encoder>
       """.stripMargin))
-    val customFields: Map[String, String] = (AppIdentity.whoAmI(defaultAppName = defaultAppName) match {
+    JsObject(((AppIdentity.whoAmI(defaultAppName = defaultAppName) match {
       case awsIdentity: AwsIdentity => Map(
         "app" -> awsIdentity.app,
         "stack" -> awsIdentity.stack,
         "stage" -> awsIdentity.stage
       )
       case _ => Map("app" -> defaultAppName)
-    }) ++ Option(EC2MetadataUtils.getInstanceId).map("ec2_instance" -> _)
-    JsObject(customFields.mapValues(JsString))
+    }) ++ Option(EC2MetadataUtils.getInstanceId).map("ec2_instance" -> _)).mapValues(JsString))
   }
 
   override def start(): Unit = {
