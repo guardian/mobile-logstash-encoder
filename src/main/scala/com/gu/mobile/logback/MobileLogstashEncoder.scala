@@ -13,9 +13,6 @@ final class MobileLogstashEncoder extends LogstashEncoder {
   def setDefaultAppName(defaultAppName: String): Unit = maybeDefaultAppName = Some(defaultAppName)
 
   private def loadAppStackStageJsObject: JsObject = {
-    val maybeInstanceId: Seq[(String, String)] = Option(EC2MetadataUtils.getInstanceId).map(instanceId =>
-      Seq("ec2_instance" -> instanceId)).getOrElse(Seq()
-    )
     val defaultAppName: String = maybeDefaultAppName.getOrElse(throw new IllegalArgumentException(
       s"""Logback xml must include a defaultAppName like
          |<encoder class="${classOf[MobileLogstashEncoder].getCanonicalName}">
@@ -29,7 +26,7 @@ final class MobileLogstashEncoder extends LogstashEncoder {
         "stage" -> awsIdentity.stage
       )
       case _ => Map("app" -> defaultAppName)
-    }) ++ maybeInstanceId
+    }) ++ Option(EC2MetadataUtils.getInstanceId).map("ec2_instance" -> _)
     JsObject(customFields.mapValues(JsString))
   }
 
