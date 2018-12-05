@@ -12,7 +12,7 @@ final class MobileLogstashEncoder extends LogstashEncoder {
 
   def setDefaultAppName(defaultAppName: String): Unit = maybeDefaultAppName = Some(defaultAppName)
 
-  private def loadAppStackStageJsObject: JsObject = {
+  private lazy val loadAppStackStageJsObject: JsObject = {
     val defaultAppName: String = maybeDefaultAppName.getOrElse(throw new IllegalArgumentException(
       s"""Logback xml must include a defaultAppName like
          |<encoder class="${classOf[MobileLogstashEncoder].getCanonicalName}">
