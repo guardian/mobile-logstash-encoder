@@ -33,7 +33,7 @@ lazy val root = (project in file("."))
     scalaVersion := scala_2_12,
     name := "mobile-logstash-encoder",
     libraryDependencies ++= Seq(
-      "com.gu" %% "simple-configuration-core" % "1.5.2",
+      "com.gu" %% "simple-configuration-core" % "1.5.5",
       "net.logstash.logback" % "logstash-logback-encoder" % "5.2",
       "ch.qos.logback" % "logback-core" % "1.2.3",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.9.10",
