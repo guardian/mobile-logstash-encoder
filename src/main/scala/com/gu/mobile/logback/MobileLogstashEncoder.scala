@@ -2,12 +2,12 @@ package com.gu.mobile.logback
 
 import java.io.StringWriter
 
-import com.amazonaws.util.EC2MetadataUtils
 import com.fasterxml.jackson.core.{JsonFactory, TreeNode}
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.node.ObjectNode
 import com.gu.{AppIdentity, AwsIdentity}
 import net.logstash.logback.encoder.LogstashEncoder
+import software.amazon.awssdk.regions.internal.util.EC2MetadataUtils
 
 import scala.util.{Failure, Success, Try}
 
