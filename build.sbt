@@ -4,11 +4,21 @@ val scala_2_12: String = "2.12.11"
 val scala_2_13: String = "2.13.2"
 
 lazy val publishSettings = Seq(
+  publishTo := sonatypePublishToBundle.value,
+  scmInfo := Some(ScmInfo(
+    url("https://github.com/guardian/mobile-logstash-encoder"),
+    "scm:git:git@github.com/guardian/mobile-logstash-encoder"
+  )),
+  homepage := Some(url("https://github.com/guardian/mobile-logstash-encoder")),
+  developers := List(Developer(
+    id = "Guardian",
+    name = "Guardian",
+    email = null,
+    url = url("https://github.com/guardian")
+  )),
   crossScalaVersions := Seq(scala_2_12, scala_2_13),
   releaseCrossBuild := true,
   releasePublishArtifactsAction := PgpKeys.publishSigned.value,
-  bintrayOrganization := Some("guardian"),
-  bintrayRepository := "platforms",
   releaseProcess := Seq[ReleaseStep](
     checkSnapshotDependencies,
     inquireVersions,
@@ -18,7 +28,7 @@ lazy val publishSettings = Seq(
     commitReleaseVersion,
     tagRelease,
     publishArtifacts,
-    releaseStepTask(bintrayRelease),
+    releaseStepCommand("sonatypeBundleRelease"),
     setNextVersion,
     commitNextVersion,
     pushChanges
