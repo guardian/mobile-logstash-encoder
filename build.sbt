@@ -44,7 +44,7 @@ lazy val root = (project in file("."))
     name := "mobile-logstash-encoder",
     libraryDependencies ++= Seq(
       "com.gu" %% "simple-configuration-core" % "1.5.5",
-      "net.logstash.logback" % "logstash-logback-encoder" % "5.2",
+      "net.logstash.logback" % "logstash-logback-encoder" % "6.4" exclude("com.fasterxml.jackson.core", "jackson-databind"),
       "ch.qos.logback" % "logback-core" % "1.2.3",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.9.10",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.10.5.1",
