@@ -2,3 +2,10 @@
 /target
 /project/target
 /project/project/target
+.metals/
+.vscode/
+.bloop/
+project/.bloop/
+project/metals.sbt
+**/it/**/*.metadata
+.bsp/
