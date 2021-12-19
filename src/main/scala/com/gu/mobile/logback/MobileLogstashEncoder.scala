@@ -72,7 +72,7 @@ final class MobileLogstashEncoder extends LogstashEncoder with JsonConcatenation
         "stage" -> awsIdentity.stage
       )
       case _ => Map("app" -> defaultAppName)
-    }) ++ Option(EC2MetadataUtils.getInstanceId).map("ec2_instance" -> _)
+    }) ++ Try(EC2MetadataUtils.getInstanceId).toOption.map("ec2_instance" -> _)
   }
 
   override def start(): Unit = {
