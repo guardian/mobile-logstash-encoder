@@ -45,9 +45,13 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "com.gu" %% "simple-configuration-core" % "1.5.5",
       "net.logstash.logback" % "logstash-logback-encoder" % "5.2",
-      "ch.qos.logback" % "logback-core" % "1.2.3",
+      "ch.qos.logback" % "logback-core" % "1.2.7",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.9.10",
-      "com.fasterxml.jackson.core" % "jackson-databind" % "2.9.10.4",
+      "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.4",
+      "io.netty" % "netty-codec" % "4.1.71.Final",
+      "io.netty" % "netty-codec-http" % "4.1.71.Final",
+      "io.netty" % "netty-codec-http2" % "4.1.71.Final",
+      "io.netty" % "netty-common" % "4.1.77.Final",
       "org.specs2" %% "specs2-core" % "4.8.3" % "test"
     )
   )
