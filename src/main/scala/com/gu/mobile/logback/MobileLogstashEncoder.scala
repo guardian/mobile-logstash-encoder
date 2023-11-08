@@ -5,11 +5,12 @@ import java.io.StringWriter
 import com.fasterxml.jackson.core.{JsonFactory, TreeNode}
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.node.ObjectNode
-import com.gu.{AppIdentity, AwsIdentity}
+import com.gu.{AppIdentity, AwsIdentity, DevIdentity}
 import net.logstash.logback.encoder.LogstashEncoder
 import software.amazon.awssdk.regions.internal.util.EC2MetadataUtils
 
 import scala.util.{Failure, Success, Try}
+import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider
 
 trait JsonConcatenationLogic {
 
@@ -65,14 +66,24 @@ final class MobileLogstashEncoder extends LogstashEncoder with JsonConcatenation
          |  <defaultAppName>APP_NAME_HERE</defaultAppName>
          |</encoder>
       """.stripMargin))
-    (AppIdentity.whoAmI(defaultAppName = defaultAppName) match {
+
+    val identity = Option(System.getenv("MOBILE_LOCAL_DEV")) match {
+      case Some(_) => DevIdentity(defaultAppName)
+      case None => 
+        AppIdentity
+          .whoAmI(defaultAppName, DefaultCredentialsProvider.builder().build())
+          .getOrElse(DevIdentity(defaultAppName))
+      
+    }    
+
+    (identity match {
       case awsIdentity: AwsIdentity => Map(
         "app" -> awsIdentity.app,
         "stack" -> awsIdentity.stack,
         "stage" -> awsIdentity.stage
-      )
+      ) ++ Try(EC2MetadataUtils.getInstanceId).toOption.map("ec2_instance" -> _)
       case _ => Map("app" -> defaultAppName)
-    }) ++ Try(EC2MetadataUtils.getInstanceId).toOption.map("ec2_instance" -> _)
+    })
   }
 
   override def start(): Unit = {
