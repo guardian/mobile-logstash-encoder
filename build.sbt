@@ -34,6 +34,7 @@ lazy val publishSettings = Seq(
     pushChanges
   )
 )
+val awsSdk2Version = "2.21.21"
 
 lazy val root = (project in file("."))
   .settings(publishSettings)
@@ -43,6 +44,8 @@ lazy val root = (project in file("."))
     scalaVersion := scala_2_12,
     name := "mobile-logstash-encoder",
     libraryDependencies ++= Seq(
+      "software.amazon.awssdk" % "autoscaling" % awsSdk2Version,
+      "software.amazon.awssdk" % "ec2" % awsSdk2Version,
       "com.gu" %% "simple-configuration-core" % "1.5.7",
       "net.logstash.logback" % "logstash-logback-encoder" % "5.2",
       "ch.qos.logback" % "logback-core" % "1.2.7",
