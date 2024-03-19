@@ -1,7 +1,7 @@
 import sbtrelease.ReleaseStateTransformations._
 
-val scala_2_12: String = "2.12.11"
-val scala_2_13: String = "2.13.2"
+val scala_2_12: String = "2.12.18"
+val scala_2_13: String = "2.13.12"
 
 lazy val publishSettings = Seq(
   publishTo := sonatypePublishToBundle.value,
@@ -46,15 +46,15 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "software.amazon.awssdk" % "autoscaling" % awsSdk2Version,
       "software.amazon.awssdk" % "ec2" % awsSdk2Version,
-      "com.gu" %% "simple-configuration-core" % "1.5.7",
-      "net.logstash.logback" % "logstash-logback-encoder" % "5.2",
-      "ch.qos.logback" % "logback-core" % "1.2.13",
-      "com.fasterxml.jackson.core" % "jackson-core" % "2.9.10",
-      "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.4",
-      "io.netty" % "netty-codec" % "4.1.71.Final",
-      "io.netty" % "netty-codec-http" % "4.1.71.Final",
-      "io.netty" % "netty-codec-http2" % "4.1.71.Final",
-      "io.netty" % "netty-common" % "4.1.77.Final",
-      "org.specs2" %% "specs2-core" % "4.8.3" % "test"
+      "com.gu" %% "simple-configuration-core" % "1.5.8",
+      "net.logstash.logback" % "logstash-logback-encoder" % "5.3",
+      "ch.qos.logback" % "logback-core" % "1.4.14",
+      "com.fasterxml.jackson.core" % "jackson-core" % "2.16.1",
+      "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.5",
+      "io.netty" % "netty-codec" % "4.1.104.Final",
+      "io.netty" % "netty-codec-http" % "4.1.104.Final",
+      "io.netty" % "netty-codec-http2" % "4.1.104.Final",
+      "io.netty" % "netty-common" % "4.1.104.Final",
+      "org.specs2" %% "specs2-core" % "4.20.4" % "test"
     )
   )
