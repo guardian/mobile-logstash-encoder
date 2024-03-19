@@ -34,7 +34,7 @@ lazy val publishSettings = Seq(
     pushChanges
   )
 )
-val awsSdk2Version = "2.21.21"
+val awsSdk2Version = "2.21.46"
 
 lazy val root = (project in file("."))
   .settings(publishSettings)
