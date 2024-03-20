@@ -1,4 +1,4 @@
-import sbtrelease.ReleaseStateTransformations._
+import sbtrelease.ReleaseStateTransformations.*
 
 val scala_2_12: String = "2.12.18"
 val scala_2_13: String = "2.13.12"
