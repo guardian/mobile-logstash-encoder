@@ -1,7 +1,7 @@
 import sbtrelease.ReleaseStateTransformations.*
 
 val scala_2_12: String = "2.12.19"
-val scala_2_13: String = "2.13.12"
+val scala_2_13: String = "2.13.13"
 
 lazy val publishSettings = Seq(
   publishTo := sonatypePublishToBundle.value,
