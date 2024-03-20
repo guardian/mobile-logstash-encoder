@@ -55,6 +55,6 @@ lazy val root = (project in file("."))
       "io.netty" % "netty-codec-http" % "4.1.107.Final",
       "io.netty" % "netty-codec-http2" % "4.1.107.Final",
       "io.netty" % "netty-common" % "4.1.107.Final",
-      "org.specs2" %% "specs2-core" % "4.20.4" % "test"
+      "org.specs2" %% "specs2-core" % "4.20.5" % "test"
     )
   )
