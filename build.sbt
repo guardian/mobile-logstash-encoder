@@ -14,7 +14,7 @@ val awsSdk2Version = "2.25.13"
 
 lazy val root = (project in file("."))
   .settings(
-    licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html")),
+    licenses := Seq(License.Apache2),
     organization := "com.gu",
     name := "mobile-logstash-encoder",
     libraryDependencies ++= Seq(
@@ -31,7 +31,6 @@ lazy val root = (project in file("."))
       "io.netty" % "netty-common" % "4.1.107.Final",
       "org.specs2" %% "specs2-core" % "4.20.5" % "test"
     ),
-    publish / skip := true,
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
     releaseCrossBuild := true, // true if you cross-build the project for multiple Scala versions
     releaseProcess := Seq[ReleaseStep](
