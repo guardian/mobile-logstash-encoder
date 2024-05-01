@@ -29,7 +29,7 @@ lazy val root = (project in file("."))
       "io.netty" % "netty-codec-http" % "4.1.109.Final",
       "io.netty" % "netty-codec-http2" % "4.1.109.Final",
       "io.netty" % "netty-common" % "4.1.109.Final",
-      "org.specs2" %% "specs2-core" % "4.20.5" % "test"
+      "org.specs2" %% "specs2-core" % "4.20.6" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
     releaseCrossBuild := true, // true if you cross-build the project for multiple Scala versions
