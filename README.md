@@ -23,14 +23,3 @@ Add the MobileLogstash to an appender like
 This repo uses [`gha-scala-library-release-workflow`](https://github.com/guardian/gha-scala-library-release-workflow)
 to automate publishing releases (both full & preview releases) - see
 [**Making a Release**](https://github.com/guardian/gha-scala-library-release-workflow/blob/main/docs/making-a-release.md).
-```shell
-clean
-release
-```
-
-The cross-compiled released artifacts should appear under:
-
-- [Sonatype](https://oss.sonatype.org/#nexus-search;gav~com.gu~~~~)
-- [Maven Central](https://repo1.maven.org/maven2/com/gu/). Note this can take a few minutes to synchronize.
-
-Once the release is done, merge your branch into `main` (or `master`) branch.
