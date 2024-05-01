@@ -44,5 +44,7 @@ lazy val root = (project in file("."))
       tagRelease,
       setNextVersion,
       commitNextVersion
-    )
+    ),
+    Test / testOptions +=
+      Tests.Argument(TestFrameworks.ScalaTest, "-u", s"test-results/scala-${scalaVersion.value}", "-o")
   )
