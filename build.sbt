@@ -4,11 +4,10 @@ val scala_2_12: String = "2.12.19"
 val scala_2_13: String = "2.13.13"
 
 ThisBuild / scalacOptions := Seq("-deprecation", "-release:11")
-ThisBuild / scalaVersion := "2.13.13"
+ThisBuild / scalaVersion := scala_2_12
 ThisBuild / crossScalaVersions := Seq(
   scalaVersion.value,
-  scala_2_12,
-  scala_2_13
+  scala_2_13,
 )
 
 val awsSdk2Version = "2.25.13"
