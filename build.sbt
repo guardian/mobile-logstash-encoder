@@ -1,7 +1,7 @@
 import ReleaseTransformations.*
 import sbtversionpolicy.withsbtrelease.ReleaseVersion
 val scala_2_12: String = "2.12.19"
-val scala_2_13: String = "2.13.13"
+val scala_2_13: String = "2.13.14"
 
 ThisBuild / scalacOptions := Seq("-deprecation", "-release:11")
 ThisBuild / scalaVersion := scala_2_13
