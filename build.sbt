@@ -20,16 +20,16 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "software.amazon.awssdk" % "autoscaling" % awsSdk2Version,
       "software.amazon.awssdk" % "ec2" % awsSdk2Version,
-      "com.gu" %% "simple-configuration-core" % "1.7.0",
+      "com.gu" %% "simple-configuration-core" % "2.0.0",
       "net.logstash.logback" % "logstash-logback-encoder" % "7.4",
-      "ch.qos.logback" % "logback-core" % "1.5.3",
-      "com.fasterxml.jackson.core" % "jackson-core" % "2.16.2",
+      "ch.qos.logback" % "logback-core" % "1.5.6",
+      "com.fasterxml.jackson.core" % "jackson-core" % "2.17.0",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.17.0",
-      "io.netty" % "netty-codec" % "4.1.107.Final",
-      "io.netty" % "netty-codec-http" % "4.1.107.Final",
-      "io.netty" % "netty-codec-http2" % "4.1.107.Final",
-      "io.netty" % "netty-common" % "4.1.107.Final",
-      "org.specs2" %% "specs2-core" % "4.20.5" % "test"
+      "io.netty" % "netty-codec" % "4.1.109.Final",
+      "io.netty" % "netty-codec-http" % "4.1.109.Final",
+      "io.netty" % "netty-codec-http2" % "4.1.109.Final",
+      "io.netty" % "netty-common" % "4.1.109.Final",
+      "org.specs2" %% "specs2-core" % "4.20.6" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
     releaseCrossBuild := true, // true if you cross-build the project for multiple Scala versions
