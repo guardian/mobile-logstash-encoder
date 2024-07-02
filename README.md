@@ -1,5 +1,8 @@
 # Mobile Logstash Encoder
 
+[![mobile-logstash-encoder Scala version support](https://index.scala-lang.org/guardian/mobile-logstash-encoder/mobile-logstash-encoder/latest-by-scala-version.svg?platform=jvm)](https://index.scala-lang.org/guardian/mobile-logstash-encoder/mobile-logstash-encoder)
+[![Release](https://github.com/guardian/mobile-logstash-encoder/actions/workflows/release.yml/badge.svg)](https://github.com/guardian/mobile-logstash-encoder/actions/workflows/release.yml)
+
 Mobile wishes to capture App, Stack and Stage using the simple-configuration AWS identity detection.
 
 This library provides an encoder extends the LogstashEncoder to set the custom fields.
