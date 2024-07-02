@@ -1,13 +1,12 @@
 import ReleaseTransformations.*
 import sbtversionpolicy.withsbtrelease.ReleaseVersion
-val scala_2_12: String = "2.12.19"
-val scala_2_13: String = "2.13.14"
 
 ThisBuild / scalacOptions := Seq("-deprecation", "-release:11")
-ThisBuild / scalaVersion := scala_2_13
+ThisBuild / scalaVersion := "2.13.14"
 ThisBuild / crossScalaVersions := Seq(
   scalaVersion.value,
-  scala_2_12,
+  "2.12.19",
+  "3.3.3",
 )
 val awsSdk2Version = "2.25.70"
 
