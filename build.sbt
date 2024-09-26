@@ -1,6 +1,6 @@
 import ReleaseTransformations.*
 import sbtversionpolicy.withsbtrelease.ReleaseVersion
-val scala_2_12: String = "2.12.19"
+val scala_2_12: String = "2.12.20"
 val scala_2_13: String = "2.13.14"
 
 ThisBuild / scalacOptions := Seq("-deprecation", "-release:11")
@@ -21,7 +21,7 @@ lazy val root = (project in file("."))
       "software.amazon.awssdk" % "ec2" % awsSdk2Version,
       "com.gu" %% "simple-configuration-core" % "2.0.0",
       "net.logstash.logback" % "logstash-logback-encoder" % "8.0",
-      "ch.qos.logback" % "logback-core" % "1.5.7",
+      "ch.qos.logback" % "logback-core" % "1.5.8",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.17.2",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.17.2",
       "io.netty" % "netty-codec" % "4.1.113.Final",
