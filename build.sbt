@@ -24,7 +24,7 @@ lazy val root = (project in file("."))
       "ch.qos.logback" % "logback-core" % "1.5.8",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.18.0",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.18.0",
-      "io.netty" % "netty-codec" % "4.1.113.Final",
+      "io.netty" % "netty-codec" % "4.1.114.Final",
       "io.netty" % "netty-codec-http" % "4.1.113.Final",
       "io.netty" % "netty-codec-http2" % "4.1.113.Final",
       "io.netty" % "netty-common" % "4.1.113.Final",
