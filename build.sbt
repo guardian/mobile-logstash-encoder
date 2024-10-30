@@ -21,14 +21,14 @@ lazy val root = (project in file("."))
       "software.amazon.awssdk" % "ec2" % awsSdk2Version,
       "com.gu" %% "simple-configuration-core" % "2.0.0",
       "net.logstash.logback" % "logstash-logback-encoder" % "8.0",
-      "ch.qos.logback" % "logback-core" % "1.5.9",
+      "ch.qos.logback" % "logback-core" % "1.5.11",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.18.0",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.18.0",
       "io.netty" % "netty-codec" % "4.1.114.Final",
       "io.netty" % "netty-codec-http" % "4.1.114.Final",
       "io.netty" % "netty-codec-http2" % "4.1.114.Final",
       "io.netty" % "netty-common" % "4.1.114.Final",
-      "org.specs2" %% "specs2-core" % "4.20.8" % "test"
+      "org.specs2" %% "specs2-core" % "4.20.9" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
     releaseCrossBuild := true, // true if you cross-build the project for multiple Scala versions
