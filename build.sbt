@@ -19,7 +19,7 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "software.amazon.awssdk" % "autoscaling" % awsSdk2Version,
       "software.amazon.awssdk" % "ec2" % awsSdk2Version,
-      "com.gu" %% "simple-configuration-core" % "4.0.1",
+      "com.gu" %% "simple-configuration-core" % "4.0.2",
       "net.logstash.logback" % "logstash-logback-encoder" % "8.0",
       "ch.qos.logback" % "logback-core" % "1.5.15",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.18.2",
