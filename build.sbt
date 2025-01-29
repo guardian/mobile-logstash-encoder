@@ -1,7 +1,7 @@
 import ReleaseTransformations.*
 import sbtversionpolicy.withsbtrelease.ReleaseVersion
 val scala_2_12: String = "2.12.20"
-val scala_2_13: String = "2.13.15"
+val scala_2_13: String = "2.13.16"
 
 ThisBuild / scalacOptions := Seq("-deprecation", "-release:11")
 ThisBuild / scalaVersion := scala_2_13
@@ -24,10 +24,10 @@ lazy val root = (project in file("."))
       "ch.qos.logback" % "logback-core" % "1.5.16",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.18.2",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.18.2",
-      "io.netty" % "netty-codec" % "4.1.116.Final",
-      "io.netty" % "netty-codec-http" % "4.1.116.Final",
-      "io.netty" % "netty-codec-http2" % "4.1.116.Final",
-      "io.netty" % "netty-common" % "4.1.116.Final",
+      "io.netty" % "netty-codec" % "4.1.117.Final",
+      "io.netty" % "netty-codec-http" % "4.1.117.Final",
+      "io.netty" % "netty-codec-http2" % "4.1.117.Final",
+      "io.netty" % "netty-common" % "4.1.117.Final",
       "org.specs2" %% "specs2-core" % "4.20.9" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
