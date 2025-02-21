@@ -26,7 +26,7 @@ lazy val root = (project in file("."))
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.18.2",
       "io.netty" % "netty-codec" % "4.1.118.Final",
       "io.netty" % "netty-codec-http" % "4.1.118.Final",
-      "io.netty" % "netty-codec-http2" % "4.1.117.Final",
+      "io.netty" % "netty-codec-http2" % "4.1.118.Final",
       "io.netty" % "netty-common" % "4.1.117.Final",
       "org.specs2" %% "specs2-core" % "4.20.9" % "test"
     ),
