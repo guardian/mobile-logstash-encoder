@@ -9,7 +9,7 @@ ThisBuild / crossScalaVersions := Seq(
   scalaVersion.value,
   scala_2_12,
 )
-val awsSdk2Version = "2.30.38"
+val awsSdk2Version = "2.31.20"
 
 lazy val root = (project in file("."))
   .settings(
@@ -19,8 +19,8 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "software.amazon.awssdk" % "autoscaling" % awsSdk2Version,
       "software.amazon.awssdk" % "ec2" % awsSdk2Version,
-      "com.gu" %% "simple-configuration-core" % "5.0.2",
       "net.logstash.logback" % "logstash-logback-encoder" % "8.1",
+      "com.gu" %% "simple-configuration-core" % "5.1.0",
       "ch.qos.logback" % "logback-core" % "1.5.18",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.18.3",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.18.3",
