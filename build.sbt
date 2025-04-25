@@ -22,7 +22,7 @@ lazy val root = (project in file("."))
       "net.logstash.logback" % "logstash-logback-encoder" % "8.1",
       "com.gu" %% "simple-configuration-core" % "5.1.0",
       "ch.qos.logback" % "logback-core" % "1.5.18",
-      "com.fasterxml.jackson.core" % "jackson-core" % "2.18.3",
+      "com.fasterxml.jackson.core" % "jackson-core" % "2.19.0",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.18.3",
       "io.netty" % "netty-codec" % "4.2.0.Final",
       "io.netty" % "netty-codec-http" % "4.2.0.Final",
