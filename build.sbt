@@ -20,7 +20,7 @@ lazy val root = (project in file("."))
       "software.amazon.awssdk" % "autoscaling" % awsSdk2Version,
       "software.amazon.awssdk" % "ec2" % awsSdk2Version,
       "net.logstash.logback" % "logstash-logback-encoder" % "8.1",
-      "com.gu" %% "simple-configuration-core" % "5.1.0",
+      "com.gu" %% "simple-configuration-core" % "5.1.1",
       "ch.qos.logback" % "logback-core" % "1.5.18",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.19.0",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.19.0",
