@@ -27,7 +27,7 @@ lazy val root = (project in file("."))
       "io.netty" % "netty-codec" % "4.2.2.Final",
       "io.netty" % "netty-codec-http" % "4.2.2.Final",
       "io.netty" % "netty-codec-http2" % "4.2.2.Final",
-      "io.netty" % "netty-common" % "4.2.1.Final",
+      "io.netty" % "netty-common" % "4.2.2.Final",
       "org.specs2" %% "specs2-core" % "4.21.0" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
