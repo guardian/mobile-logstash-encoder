@@ -9,7 +9,7 @@ ThisBuild / crossScalaVersions := Seq(
   scalaVersion.value,
   scala_2_12,
 )
-val awsSdk2Version = "2.31.61"
+val awsSdk2Version = "2.32.27"
 
 lazy val root = (project in file("."))
   .settings(
@@ -17,17 +17,13 @@ lazy val root = (project in file("."))
     organization := "com.gu",
     name := "mobile-logstash-encoder",
     libraryDependencies ++= Seq(
-      "software.amazon.awssdk" % "autoscaling" % awsSdk2Version,
-      "software.amazon.awssdk" % "ec2" % awsSdk2Version,
+      "software.amazon.awssdk" % "auth" % awsSdk2Version,
+      "software.amazon.awssdk" % "regions" % awsSdk2Version,
       "net.logstash.logback" % "logstash-logback-encoder" % "8.1",
-      "com.gu" %% "simple-configuration-core" % "5.1.2",
       "ch.qos.logback" % "logback-core" % "1.5.18",
+      "com.gu" %% "simple-configuration-core" % "7.0.0",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.19.1",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.19.1",
-      "io.netty" % "netty-codec" % "4.2.2.Final",
-      "io.netty" % "netty-codec-http" % "4.2.2.Final",
-      "io.netty" % "netty-codec-http2" % "4.2.2.Final",
-      "io.netty" % "netty-common" % "4.2.2.Final",
       "org.specs2" %% "specs2-core" % "4.21.0" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
