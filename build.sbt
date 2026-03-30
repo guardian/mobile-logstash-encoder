@@ -24,7 +24,7 @@ lazy val root = (project in file("."))
       "com.gu" %% "simple-configuration-core" % "7.0.0",
       "com.fasterxml.jackson.core" % "jackson-core" % "2.19.1",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.19.1",
-      "org.specs2" %% "specs2-core" % "4.21.0" % "test"
+      "org.specs2" %% "specs2-core" % "4.23.0" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
     releaseCrossBuild := true, // true if you cross-build the project for multiple Scala versions
