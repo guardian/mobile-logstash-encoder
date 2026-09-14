@@ -22,8 +22,8 @@ lazy val root = (project in file("."))
       "net.logstash.logback" % "logstash-logback-encoder" % "8.1",
       "ch.qos.logback" % "logback-core" % "1.5.38",
       "com.gu" %% "simple-configuration-core" % "14.0.1",
-      "com.fasterxml.jackson.core" % "jackson-core" % "2.21.4",
-      "com.fasterxml.jackson.core" % "jackson-databind" % "2.21.4",
+      "com.fasterxml.jackson.core" % "jackson-core" % "2.21.6",
+      "com.fasterxml.jackson.core" % "jackson-databind" % "2.21.6",
       "org.specs2" %% "specs2-core" % "4.21.0" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
