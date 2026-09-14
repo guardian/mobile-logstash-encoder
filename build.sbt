@@ -1,7 +1,7 @@
 import ReleaseTransformations.*
 import sbtversionpolicy.withsbtrelease.ReleaseVersion
-val scala_2_12: String = "2.12.20"
-val scala_2_13: String = "2.13.16"
+val scala_2_12: String = "2.12.21"
+val scala_2_13: String = "2.13.18"
 
 ThisBuild / scalacOptions := Seq("-deprecation", "-release:11")
 ThisBuild / scalaVersion := scala_2_13
@@ -9,7 +9,7 @@ ThisBuild / crossScalaVersions := Seq(
   scalaVersion.value,
   scala_2_12,
 )
-val awsSdk2Version = "2.32.27"
+val awsSdk2Version = "2.54.13"
 
 lazy val root = (project in file("."))
   .settings(
@@ -20,10 +20,10 @@ lazy val root = (project in file("."))
       "software.amazon.awssdk" % "auth" % awsSdk2Version,
       "software.amazon.awssdk" % "regions" % awsSdk2Version,
       "net.logstash.logback" % "logstash-logback-encoder" % "8.1",
-      "ch.qos.logback" % "logback-core" % "1.5.18",
-      "com.gu" %% "simple-configuration-core" % "7.0.0",
-      "com.fasterxml.jackson.core" % "jackson-core" % "2.19.1",
-      "com.fasterxml.jackson.core" % "jackson-databind" % "2.19.1",
+      "ch.qos.logback" % "logback-core" % "1.5.38",
+      "com.gu" %% "simple-configuration-core" % "14.0.1",
+      "com.fasterxml.jackson.core" % "jackson-core" % "2.21.4",
+      "com.fasterxml.jackson.core" % "jackson-databind" % "2.21.4",
       "org.specs2" %% "specs2-core" % "4.21.0" % "test"
     ),
     releaseVersion := ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease().value,
