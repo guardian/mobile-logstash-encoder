@@ -9,7 +9,7 @@ ThisBuild / crossScalaVersions := Seq(
   scalaVersion.value,
   scala_2_12,
 )
-val awsSdk2Version = "2.54.13"
+val awsSdk2Version = "2.54.20"
 
 lazy val root = (project in file("."))
   .settings(
